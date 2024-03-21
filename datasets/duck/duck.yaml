@@ -1,6 +1,6 @@
 
 # 数据集所在文件夹的绝对路径(Windows下最好用绝对路径)
-path: C:\Users\Mayn\Desktop\桌面文件夹\my_repo\YOLOv8_custom\datasets\duck
+path: C:\Users\Mayn\Desktop\桌面文件夹\my_repo\YOLO_Custom\datasets\duck
 
 # 各个数据集的相对数据文件夹的路径
 train: images/train
