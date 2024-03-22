@@ -8,7 +8,8 @@ if __name__ == '__main__':
     model = YOLO(r".\runs\detect\train\weights\best.pt")
 
     # 读取测试图像
-    test_path = r".\datasets\duck\images\train\a341.jpg"
+    test_path = r"datasets\coco8\images\train\000000000030.jpg"
+    # test_path = r"test.jpg"
     test_img = cv2.imread(test_path)
 
     # 先展示一下是那一张图像

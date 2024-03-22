@@ -10,8 +10,8 @@ if __name__ == '__main__':
     model = YOLO(r"weights\yolov8n.pt")
 
     # 使用指定的数据集训练模型若干个epoch
-    data_path = r"datasets\duck\duck.yaml"
-    results = model.train(data=data_path, epochs=20)
+    data_path = r"datasets\coco128.yaml"
+    results = model.train(data=data_path, epochs=50)
 
     # 将模型导出为ONNX格式
     success = model.export(format='onnx')
