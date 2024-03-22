@@ -1,5 +1,6 @@
 
 from ultralytics import YOLO
+import cv2
 
 if __name__ == '__main__': 
 
@@ -9,9 +10,13 @@ if __name__ == '__main__':
     # 加载预训练的YOLO模型(推荐使用)
     model = YOLO(r"weights\yolov8n.pt")
 
-    # 使用指定的数据集训练模型若干个epoch
-    data_path = r"datasets\coco128.yaml"
-    results = model.train(data=data_path, epochs=20)
+    results = model('test1.jpg')  # list of 1 Results object
 
-    # 将模型导出为ONNX格式
-    success = model.export(format='onnx')
+    # 使用 plot 方法绘制结果  
+    plot_img = results.plot(draw_threshold=0.5)  # draw_threshold 是绘制框的置信度阈值  
+    
+    # 显示结果图像  
+    cv2.imshow('Result Image', plot_img)  
+    cv2.waitKey(0)  
+    cv2.destroyAllWindows()
+    

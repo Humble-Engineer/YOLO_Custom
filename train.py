@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     # 使用指定的数据集训练模型若干个epoch
     data_path = r"datasets\coco128.yaml"
-    results = model.train(data=data_path, epochs=50)
+    results = model.train(data=data_path, epochs=500)
 
     # 将模型导出为ONNX格式
     success = model.export(format='onnx')
