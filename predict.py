@@ -1,6 +1,5 @@
 
 from ultralytics import YOLO
-import numpy as np
 import cv2
 
 if __name__ == '__main__': 
@@ -10,7 +9,7 @@ if __name__ == '__main__':
 
     # 读取测试图像
     # test_path = r"datasets\coco8\images\train\000000000030.jpg"
-    test_path = r"test3.jpg"
+    test_path = r"test5.jpg"
     test_img = cv2.imread(test_path)
 
     # 先展示一下是那一张图像
@@ -19,7 +18,7 @@ if __name__ == '__main__':
     cv2.destroyAllWindows()
     
     # 使用该模型对图像执行对象检测
-    results = model.predict(source=test_img, save=True, save_txt=True, show=True)
+    results = model.predict(source=test_img, save=False, save_txt=False, show=True)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 
