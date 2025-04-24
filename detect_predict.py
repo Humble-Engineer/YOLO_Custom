@@ -4,11 +4,10 @@ import cv2
 if __name__ == '__main__': 
 
     # 加载训练完成的模型
-    model = YOLO(r".\runs\detect\train3\weights\best.pt")
+    model = YOLO(r".\runs\detect\train2\weights\best.pt")
 
     # 读取测试图像
-    test_path = r"datasets\duck\images\test\test.jpg"
-    # test_path = r"test5.jpg"
+    test_path = r"datasets\board\images\test\18-1.jpg"
     test_img = cv2.imread(test_path)
 
     # 先展示一下是那一张图像

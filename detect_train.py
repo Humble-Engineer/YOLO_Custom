@@ -6,11 +6,11 @@ if __name__ == '__main__':
     # model = YOLO(r"models\v8\yolov8n.yaml")
 
     # 加载预训练的YOLO模型(推荐使用)
-    model = YOLO(r"weights\yolov11n.pt")
+    model = YOLO(r"weights\yolo11n.pt")
 
     # 使用指定的数据集训练模型若干个epoch
-    data_path = r"datasets\duck.yaml"
-    results = model.train(data=data_path, epochs=100)
+    data_path = r"datasets\board.yaml"
+    results = model.train(data=data_path, epochs=500, batch=-1)
 
     # 将模型导出为ONNX格式
     # success = model.export(format='onnx')
