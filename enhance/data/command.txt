@@ -1,0 +1,26 @@
+进入YOLOv5目录：
+cd /mnt/YOLOv5-Lite-master/
+
+训练命令（data改为数据文件夹名称）：
+python3 train.py --weights v5lite-s.pt --cfg models/v5Lite-s.yaml --data ../data/config.yaml --workers 4 --batch-size 20 --epochs 100
+
+复制命令（expX改为YOLO返回的结果所保存的文件夹）：
+cp runs/train/expX/weights/best.pt ../data
+
+更换到数据集目录（data改为数据文件夹名称）：
+cd ../data
+
+重命名命令（data改为权重文件名称）：
+mv best.pt data.pt
+
+安装onnx：
+pip install onnx==1.7.0
+
+转化为onnx文件命令（在数据集目录下运行，data改为权重文件名称）：
+python ../YOLOv5-Lite-master/export.py --weights ./data.pt
+
+测试命令（在数据集目录下运行，结果在当前目录runs下）：
+python3 ../YOLOv5-Lite-master/detect.py --weight data.pt --source ./image/test
+
+
+
